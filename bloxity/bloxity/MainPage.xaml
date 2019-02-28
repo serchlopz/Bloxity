@@ -12,37 +12,57 @@
             </Label>
 
             <Image 
-                   Source="onu" 
+                   Source="rfacil_logo" 
                    WidthRequest="180">
             </Image>
 
             <Label 
-                    Text="Nueva app Bloxity" 
+                    Text="Usuario" 
                     HorizontalOptions="Center">
                 
             </Label>
-            
             <Entry 
                 Keyboard="Email" 
-                Placeholder="Ingrese tus datos">
-                
+                Placeholder="Usuario">
             </Entry>
 
-            <!--<Grid>
+            <Label Text="Recordar este dispositivo">
+            </Label>
+            
+            <Grid
+                Margin="0.20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
+                        
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-            </Grid>-->
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Text="Usuario"></Label>
+                <Entry Grid.Row="0"
+                       Grid.Column="1"
+                       Keyboard="Email"
+                       Placeholder="Ingrese el usuario">
+                </Entry>
+                <Label Grid.Row="1"
+                       Grid.Column="0"
+                       Text="Password">
+                </Label>
+                <Entry Grid.Row="1"
+                       Grid.Column="1"
+                       IsPassword="True"
+                       Placeholder="Ingrese la contraseña">
+                </Entry>
+            </Grid>
 
             <Label Text="Password" HorizontalOptions="Center"></Label>
-            <Entry IsPassword="True" Placeholder="Ingrese tu password"></Entry>
+            <Entry IsPassword="True" Placeholder="Contraseña"></Entry>
 
 
             <ActivityIndicator></ActivityIndicator>
 
 
-            <StackLayout Margin="40,0">
+            <StackLayout Margin="40,5">
                 <Button BorderRadius="23"  TextColor="White" BackgroundColor="Navy" HorizontalOptions="Center" Text="Sing up" />
                 <Button BorderRadius="23" TextColor="Black" BackgroundColor="SlateGray"  HorizontalOptions="Center" Text="Registrame" />
 

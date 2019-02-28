@@ -169,4 +169,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\instagram_logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rfacil_logo.png" />
+  </ItemGroup>
 </Project>
