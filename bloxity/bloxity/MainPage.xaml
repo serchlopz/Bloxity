@@ -3,76 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:bloxity"
              x:Class="bloxity.MainPage" Title="Login">
-    <ScrollView>
-        <StackLayout Padding="10,20,10,5">
+  <ScrollView>
+    <StackLayout Padding="10,20,10,5">
 
-            <Label Text="BLOXITY" 
-                   HorizontalOptions="Center" 
+      <Label Text="BLOXITY"
+             HorizontalOptions="Center"
                    >
-            </Label>
+      </Label>
+      <Image
+             Source="rfacil_logo"
+             WidthRequest="180">
+      </Image>
 
-            <Image 
-                   Source="rfacil_logo" 
-                   WidthRequest="180">
-            </Image>
+      <Grid
+          Margin="0.20">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
 
-            <Label 
-                    Text="Usuario" 
-                    HorizontalOptions="Center">
-                
-            </Label>
-            <Entry 
-                Keyboard="Email" 
-                Placeholder="Usuario">
-            </Entry>
+          <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Text="Usuario"></Label>
+        <Entry Grid.Row="0"
+               Grid.Column="1"
+               Keyboard="Email"
+               Placeholder="Ingrese el usuario">
+        </Entry>
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="Password">
+        </Label>
+        <Entry Grid.Row="1"
+               Grid.Column="1"
+               IsPassword="True"
+               Placeholder="Ingrese la contraseña">
+        </Entry>
+      </Grid>
+      <Grid>
+      </Grid>
 
-            <Label Text="Recordar este dispositivo">
-            </Label>
-            
-            <Grid
-                Margin="0.20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                        
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Row="0"
-                       Grid.Column="0"
-                       Text="Usuario"></Label>
-                <Entry Grid.Row="0"
-                       Grid.Column="1"
-                       Keyboard="Email"
-                       Placeholder="Ingrese el usuario">
-                </Entry>
-                <Label Grid.Row="1"
-                       Grid.Column="0"
-                       Text="Password">
-                </Label>
-                <Entry Grid.Row="1"
-                       Grid.Column="1"
-                       IsPassword="True"
-                       Placeholder="Ingrese la contraseña">
-                </Entry>
-            </Grid>
+      <Label Text="Recordar este dispositivo">
+      </Label>
+      <Switch></Switch>
 
-            <Label Text="Password" HorizontalOptions="Center"></Label>
-            <Entry IsPassword="True" Placeholder="Contraseña"></Entry>
+      <ActivityIndicator></ActivityIndicator>
 
 
-            <ActivityIndicator></ActivityIndicator>
+      <StackLayout Margin="40,5">
+        <Button BorderRadius="23"  TextColor="White" BackgroundColor="Navy" HorizontalOptions="Center" Text="Sing up" />
+        <Button BorderRadius="23" TextColor="Black" BackgroundColor="gray"  HorizontalOptions="Center" Text="Registrame" />
+      </StackLayout>
 
-
-            <StackLayout Margin="40,5">
-                <Button BorderRadius="23"  TextColor="White" BackgroundColor="Navy" HorizontalOptions="Center" Text="Sing up" />
-                <Button BorderRadius="23" TextColor="Black" BackgroundColor="SlateGray"  HorizontalOptions="Center" Text="Registrame" />
-
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Image Source="facebook_logo" WidthRequest="30"></Image>
-                <Image Source="twitter_logo" WidthRequest="30"></Image>
-                <Image Source="instagram_logo" WidthRequest="30"></Image>
-            </StackLayout>
-        </StackLayout>
-    </ScrollView>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="End>"
+        <Image Source="facebook_logo" WidthRequest="30"></Image>
+        <Image Source="twitter_logo" WidthRequest="30"></Image>
+        <Image Source="instagram_logo" WidthRequest="30"></Image>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>
