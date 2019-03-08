@@ -13,7 +13,7 @@
       <Image
              Source="rfacil_logo"
              WidthRequest="180">
-      </Image>
+      </Image>  
 
       <Grid
           Margin="0.20">
@@ -30,10 +30,12 @@
                Keyboard="Email"
                Placeholder="Ingrese el usuario">
         </Entry>
+        
         <Label Grid.Row="1"
                Grid.Column="0"
                Text="Password">
         </Label>
+        
         <Entry Grid.Row="1"
                Grid.Column="1"
                IsPassword="True"
@@ -48,14 +50,12 @@
       <Switch></Switch>
 
       <ActivityIndicator></ActivityIndicator>
-
-
       <StackLayout Margin="40,5">
         <Button BorderRadius="23"  TextColor="White" BackgroundColor="Navy" HorizontalOptions="Center" Text="Sing up" />
         <Button BorderRadius="23" TextColor="Black" BackgroundColor="gray"  HorizontalOptions="Center" Text="Registrame" />
       </StackLayout>
 
-      <StackLayout Orientation="Horizontal" HorizontalOptions="End>"
+      <StackLayout Orientation="Horizontal" HorizontalOptions="End">
         <Image Source="facebook_logo" WidthRequest="30"></Image>
         <Image Source="twitter_logo" WidthRequest="30"></Image>
         <Image Source="instagram_logo" WidthRequest="30"></Image>
