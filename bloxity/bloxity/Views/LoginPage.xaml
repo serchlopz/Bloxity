@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="bloxity.Views.LoginPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    >
+    
+    <ContentPage.Content >
+        <ScrollView 
+                BindingContext="{Binding Login}">
+            <StackLayout 
+                Padding="10,10,10,35">
+                <Image 
+                    Source="rfacil_logo" 
+                    WidthRequest="300"
+                    VerticalOptions="CenterAndExpand">
+                </Image>
+                
+                <Grid 
+                    Margin="0.20"
+                    VerticalOptions="CenterAndExpand">
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition 
+                                Width="*"/>
+                        <ColumnDefinition 
+                                Width="2.5*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label 
+                        Grid.Row="0" 
+                        Grid.Column="0" 
+                        Text="Usuario">
+                    </Label>
+                    <Entry
+                        Text="{Binding Email, Mode=TwoWay}"
+                        Grid.Row="0" 
+                        Grid.Column="1" 
+                        Keyboard="Email" 
+                        Placeholder="Ingrese el usuario" 
+                        FontFamily="Arial">
+                    </Entry>
+                    <Label 
+                        Grid.Row="1" 
+                        Grid.Column="0" 
+                        Text="Password">
+                    </Label>
+                    <Entry 
+                        Text="{Binding Password, Mode=TwoWay}"
+                        Grid.Row="1" 
+                        Grid.Column="1" 
+                        IsPassword="True" 
+                        Placeholder="Ingrese la contraseña">
+                    </Entry>
+                </Grid>
+                
+                <StackLayout Orientation="Horizontal"
+                             VerticalOptions="CenterAndExpand">
+                    <Label 
+                        HorizontalOptions="StartAndExpand"
+                        Text="Recordar este dispositivo" 
+                        Grid.Row="0" 
+                        Grid.Column="0"
+                        >
+                    </Label>
+                    <Switch 
+                        Grid.Column="1"
+                        Grid.Row="1" 
+                        IsToggled="{Binding IsRemember, Mode=TwoWay}" 
+                        HorizontalOptions="End"
+                        VerticalOptions="Center">
+                    </Switch>
+                </StackLayout>
+                
+                
+                <Label 
+                    Text="Forgot your password?" 
+                    TextColor="Blue" 
+                    HorizontalOptions="CenterAndExpand">
+                </Label>
+                                
+                <ActivityIndicator 
+                      IsRunning="{Binding IsRunning, Mode=TwoWay}" 
+                      VerticalOptions="CenterAndExpand">
+                </ActivityIndicator>
+                
+                <Button 
+                    BorderColor="Black" 
+                    BorderRadius="25"
+                    BackgroundColor="Lightgray"
+                    Command="{Binding LoginCommand}"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    
+                    TextColor="Black" 
+                     
+                    Text="Sing In">
+                </Button>
+                <Button 
+                    BackgroundColor="Navy" 
+                    BorderColor="Black" 
+                    BorderRadius="25"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    Text="Registro"
+                    TextColor="White">
+                </Button>
+                <Button></Button>
+                <StackLayout 
+                    Orientation="Horizontal" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="EndAndExpand">
+                    <Image 
+                        Source="facebook_logo" 
+                        WidthRequest="40">
+                    </Image>
+                    <Image 
+                        Source="twitter_logo" 
+                        WidthRequest="40">
+                    </Image>
+                    <Image 
+                        Source="instagram_logo" 
+                        WidthRequest="40">
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
