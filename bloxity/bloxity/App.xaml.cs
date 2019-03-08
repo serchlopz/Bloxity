@@ -1,19 +1,20 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace bloxity
+﻿namespace bloxity
 {
+    using Xamarin.Forms;
+    using Views;
+
     public partial class App : Application
     {
+        #region Contructores
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new LoginPage();
         }
+        #endregion
 
+
+        #region Metodos
         protected override void OnStart()
         {
             // Handle when your app starts
@@ -28,5 +29,7 @@ namespace bloxity
         {
             // Handle when your app resumes
         }
+        #endregion
+
     }
 }
