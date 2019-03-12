@@ -19,7 +19,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Encender la conexion a internet"
+                    Message = "Es necesario encender la conexion a internet"
                 };
             }
             var isReachable = await CrossConnectivity.Current.IsRemoteReachable("google.com");
@@ -29,7 +29,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Revisa tu conexion a internet."
+                    Message = "Revisa si tu servicio tiene acceso a internet."
                 };
             }
 
@@ -96,13 +96,15 @@
             }
         }
 
-        public async Task<Response> GetList<T>(string urlBase, string servicePrefix, string controller, string tokenType, string accessToken)
+        public async Task<Response> GetList<T>(string urlBase, string servicePrefix, string controller)
         {
             try
             {
-                var client = new HttpClient();
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(tokenType, accessToken);
-                client.BaseAddress = new Uri(urlBase);
+                HttpClient client = new HttpClient
+                {
+                    BaseAddress = new Uri(urlBase)
+                };
+
                 var url = string.Format("{0}{1}", servicePrefix, controller);
                 var response = await client.GetAsync(url);
                 var result = await response.Content.ReadAsStringAsync();

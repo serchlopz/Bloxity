@@ -125,7 +125,7 @@ namespace bloxity.ViewModels
                 await Application.Current.MainPage.DisplayAlert(
                "Error",
                "Usuario o contraseña incorrectos",
-                    "Aceptar");
+               "Aceptar");
                 this.Password = string.Empty;
                 return;
             }

@@ -22,4 +22,7 @@
     <Folder Include="Infrastructure\" />
     <Folder Include="Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\Land.cs" />
+  </ItemGroup>
 </Project>

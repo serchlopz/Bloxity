@@ -3,16 +3,51 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="bloxity.Views.BloxityPage"
-    BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Bloxity">
     <ContentPage.Content>
+         
         <StackLayout
             BindingContext="{Binding Bloxity}"
             Padding="10">
-            
-            <Label Text="2da page!!!"
-                   FontSize="Large">
-            </Label>
-            
+          <ListView
+                HasUnevenRows="true"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsRefreshing Mode=TwoWay}"
+                ItemsSource="{Binding Bloxity}"
+                RefreshCommand="{Binding RefreshCommand}">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                  <StackLayout
+                                    Grid.Column="0"
+                                    VerticalOptions="Center">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="Medium"
+                                        Text="{Binding Name}"
+                                        TextColor="Black">
+                                    </Label>
+                                    <Label
+                                        Text="{Binding Capital}"
+                                        TextColor="Black">
+                                    </Label>
+                                </StackLayout>
+                                <Image
+                                Grid.Column="1"
+                                HorizontalOptions="End"
+                                Source="ic_launcher.png"></Image>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+          </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

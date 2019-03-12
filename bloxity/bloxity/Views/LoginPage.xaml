@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="bloxity.Views.LoginPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Login"
     >
     
     <ContentPage.Content >
